@@ -1,0 +1,35 @@
+<html xmlns="http://www.thymeleaf.org" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://getbootstrap.com/docs/4.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="https://getbootstrap.com/docs/4.0/examples/sign-in/signin.css" rel="stylesheet">
+
+  <title>Registration</title>
+</head>
+<body class="text-center">
+<div class="card mx-auto" style="width: 18rem;">
+  <div class="card-body">
+    <form th:action="@{/saveUser}" th:object="${user}" method ="POST" class="form-login">
+      <h1 class="h3 mb-3 font-weight-normal">New User Signup</h1>
+      <label for="inputEmail" class="sr-only">Email address</label>
+      <input type="email" id="inputEmail" th:field="*{email}" class="form-control" placeholder="Email address" required autofocus>
+      <label for="inputPassword" class="sr-only">Password</label>
+      <input type="password" id="inputPassword" th:field="*{password}" class="form-control" placeholder="Password" required>
+      <label for="inputConfirmationPassword" class="sr-only">Confirmation Password</label>
+      <input type="password" id="inputConfirmationPassword" th:field="*{confirmationPassword}" class="form-control" placeholder="Confirmation Password" required>
+      <div class="checkbox mb-3">
+      </div>
+      <div>
+        <button class="btn btn-lg btn-primary" type="submit">Register</button>
+      </div>
+    </form>
+  </div>
+</div>
+</body>
+</html>
